@@ -446,6 +446,18 @@ table td, table th {
   th, td { padding: 0.5rem 0.6rem; font-size: 0.85rem; }
 }
 
+    /* === Pastikan input header selalu putih, bahkan di dark mode === */
+input[name="headers"].form-control {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+    input[name="headers"].form-control:focus {
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.4) !important;
+  border-color: #ff7b00 !important;
+}
+
 
 </style>
 </head>
