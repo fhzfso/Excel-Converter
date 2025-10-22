@@ -669,12 +669,15 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     localStorage.setItem('darkMode', dark ? 'true' : 'false');
   }
 
-  const savedMode = localStorage.getItem('darkMode');
-  if (savedMode === 'true') {
-    setMode(true);
-  } else {
-    setMode(false);
-  }
+ const savedMode = localStorage.getItem('darkMode');
+
+// Jika belum ada data di localStorage, default-nya light mode
+if (savedMode === null) {
+  setMode(false); // false = light mode
+} else {
+  setMode(savedMode === 'true');
+}
+
 
   modeToggle.addEventListener('click', () => {
     const isDark = document.body.classList.contains('dark-mode');
